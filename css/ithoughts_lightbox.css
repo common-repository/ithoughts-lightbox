@@ -1,0 +1,248 @@
+*[data-lightbox="true"]{
+	cursor: crosshair;
+}
+
+#ithoughts_lightbox-lightboxContainer{
+	width: 200vmax;
+	height: 200vmax;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9999999;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#ithoughts_lightbox-lightboxContainer.cinema,
+#ithoughts_lightbox-lightboxContainer.cinema #ithoughts_lightbox-loader,
+#ithoughts_lightbox-lightboxContainer.cinema #ithoughts_lightbox-header,
+#ithoughts_lightbox-lightboxContainer.cinema .ithoughts_lightbox-caption{
+	color: #fff;
+	background-color: rgba(0,0,0,0.9);
+}
+#ithoughts_lightbox-lightboxContainer.cinema button{
+	color: #fff;
+}
+#ithoughts_lightbox-lightboxContainer.halo,
+#ithoughts_lightbox-lightboxContainer.halo #ithoughts_lightbox-loader,
+#ithoughts_lightbox-lightboxContainer.halo #ithoughts_lightbox-header,
+#ithoughts_lightbox-lightboxContainer.halo .ithoughts_lightbox-caption{
+	color: #000;
+	background-color: rgba(255,255,255,0.9);
+}
+#ithoughts_lightbox-lightboxContainer.halo button{
+	color: #000;
+}
+@media(max-width: 783px){
+	#ithoughts_lightbox-lightboxContainer.halo .ithoughts_lightbox-buttons button{
+		background-color: #fff;
+		border: 1px solid #000;
+		border-radius: 5px;
+	}
+	#ithoughts_lightbox-lightboxContainer.cinema .ithoughts_lightbox-buttons button{
+		background-color: #000;
+		border: 1px solid #fff;
+		border-radius: 5px;
+	}
+}
+
+
+
+
+
+
+#ithoughts_lightbox-lightboxSubContainer{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+#ithoughts_lightbox-lightboxContainer button{
+	pointer-events: auto;
+	opacity: 1;
+}
+#ithoughts_lightbox-lightboxContainer button.ithoughts-lightbox-hidden{
+	pointer-events: none;
+	opacity: 0;
+}
+#ithoughts_lightbox-header{
+	width: 100%;
+	flex: 0 0 32px;
+	font-size: 15px;
+	padding: 5px;
+	transition: 0.5s all;
+	position: relative;
+	box-sizing: border-box;
+}
+#ithoughts_lightbox-header h2{
+	font-size: 23,4375px;
+	transition: 0.5s font-size ease;
+	margin: 0;
+	color: inherit;
+}
+#ithoughts_lightbox-header:hover:not(.closing),
+#ithoughts_lightbox-header.pseudo-hover:not(.closing){
+	flex-basis: 50px;
+	font-size: 23.4375px;
+	padding: 7.8125px;
+	transition: 0.5s all;
+}
+#ithoughts_lightbox-header:hover:not(.closing)			h2,
+#ithoughts_lightbox-header.pseudo-hover:not(.closing)	h2{
+	font-size: 30px;
+	transition: 0.5s font-size ease;
+}
+#ithoughts_lightbox-header-close,
+#ithoughts_lightbox-header-zoom{
+	background-color: transparent;
+	font-size: inherit;
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: -5px;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	transition: 0.5s height ease,0.5s width ease,0.5s margin ease,0.5s border-radius ease,0.5s border ease,0.5s opacity ease;
+}
+#ithoughts_lightbox-header:hover:not(.closing)			#ithoughts_lightbox-header-close,
+#ithoughts_lightbox-header.pseudo-hover:not(.closing)	#ithoughts_lightbox-header-close,
+#ithoughts_lightbox-header:hover:not(.closing)			#ithoughts_lightbox-header-zoom,
+#ithoughts_lightbox-header.pseudo-hover:not(.closing)	#ithoughts_lightbox-header-zoom{
+	height: 50px;
+	width: 50px;
+	margin: -7.8125px;
+	border-radius: 7.8125px;
+	transition: 0.5s height ease,0.5s width ease,0.5s margin ease,0.5s border-radius ease,0.5s border ease,0.5s opacity ease;
+}
+#ithoughts_lightbox-header-close:hover,
+#ithoughts_lightbox-header-zoom:hover{
+	border-color: inherit;
+}
+#ithoughts_lightbox-header-close{
+	float: left;
+}	
+#ithoughts_lightbox-header-zoom{
+	float: right;
+}	
+#ithoughts_lightbox-header-zoom > svg{
+	vertical-align: sub;
+	margin: -3px;
+	fill: currentColor;
+}
+#ithoughts_lightbox-header h2 {
+	position: absolute;
+	top: 50%;
+	transform: translate(-0%,-50%);
+	padding: 0 50px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 1em;
+	overflow: hidden;
+	text-align: center;
+}
+#ithoughts_lightbox-subContainer{
+	flex: 1 0 0;
+	position: relative;
+}
+#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons > button{
+	width: 0.75em;
+	background: transparent;
+	border: none;
+	font-size: 80px;
+	z-index: 2;
+	position: absolute;
+	top:0;
+	height: 100%;
+	transition: 0.5s opacity;
+}
+#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons > button.ithoughts_lightbox-right{
+	right: 0;
+}
+#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons > button.ithoughts_lightbox-left{
+	left: 0;
+}
+#ithoughts_lightbox-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.ithoughts_lightbox-img{
+	max-height: 100%;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;	
+}
+#ithoughts_lightbox-captionContainer{
+	height: 25%;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
+#ithoughts_lightbox-captionContainer .ithoughts_lightbox-caption{
+	margin: 0;
+	position: absolute;
+	padding: 5px 55px;
+	width: 100%;
+	box-sizing: border-box;
+	bottom: 0;
+	border-top: 1px solid currentColor;
+	text-align: justify;
+	transform: translate(0, 100%);
+	opacity: 0;
+	transition: 0.5s all;
+}
+#ithoughts_lightbox-captionContainer:hover:not(.force-hidden) .ithoughts_lightbox-caption{
+	opacity: 1;
+	transform: translate(0, 0);
+	transition: 0.5s all;
+}
+
+@media(max-width: 783px){
+	#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons > button{
+		height: 1.5em;
+		font-size: 35px;
+		width: 50%;
+	}
+	#ithoughts_lightbox-subContainer > .ithoughts_lightbox-buttons{
+		height: 1.5em;
+		font-size: 35px;
+		top: auto;
+	}
+	#ithoughts_lightbox-container{
+		bottom: 52.5px;
+	}
+	#ithoughts_lightbox-captionContainer{
+		bottom: 52.5px;
+	}
+	#ithoughts_lightbox-captionContainer .ithoughts_lightbox-caption{
+		padding-bottom: 60px;
+		bottom: -52.5px;
+	}
+}
